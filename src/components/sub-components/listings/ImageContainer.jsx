@@ -8,7 +8,6 @@ export default function ImageContainer() {
   let [imageArr2, setImageArr2] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
-   
     setImageArr(() => selectedListing.info.images.data.slice(2, 4));
     setImageArr2(() => selectedListing.info.images.data.slice(4, 6));
   }, []);

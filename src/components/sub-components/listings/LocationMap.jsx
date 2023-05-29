@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import { useSelector } from "react-redux";
+
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_API;
 export default function LocationMap() {
@@ -15,7 +15,7 @@ export default function LocationMap() {
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [0, 0], // Set the initial center coordinates
-      zoom: 2, // Set the initial zoom level
+      zoom: 4, // Set the initial zoom level
     });
 
     // Add the geocoder control

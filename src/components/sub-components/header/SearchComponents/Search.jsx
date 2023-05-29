@@ -4,7 +4,6 @@ import SearchOpened from "./SearchOpened";
 import { useSelector } from "react-redux";
 import SearchBarMobile from "../Mobile/SearchBarMobile";
 import SearchOpenedMobile from "../Mobile/SearchOpenedMobile";
-import { el } from "date-fns/locale";
 
 export default function Search() {
   let isSearchOpened = useSelector((state) => state.user.isSearchOpened);

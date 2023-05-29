@@ -27,6 +27,7 @@ export default function SearchResult() {
           ))}
         </div>
       </div>
+      
       <div
         className={`w-[39.5%] max-sm:w-full h-[calc(100vh-160px)] max-sm:h-[300px]  sm:fixed right-0 top-[160px]  flex-grow bg-yellow-900 bg-opacity-10 overflow-hidden`}
       >

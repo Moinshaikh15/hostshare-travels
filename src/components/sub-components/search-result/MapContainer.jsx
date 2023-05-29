@@ -29,7 +29,6 @@ export default function MapContainer() {
     });
     mapRef.current.addControl(geocoder);
 
-    // Clean up on unmount
     return () => {
       mapRef.current.remove();
     };
@@ -55,7 +54,3 @@ export default function MapContainer() {
   }, [filteredData]);
   return <div ref={mapContainerRef} className="w-full h-full" />;
 }
-
-// ${
-//   map ? "block fixed left-0 right-0 bottom-0 top-0" : "hidden"
-// }

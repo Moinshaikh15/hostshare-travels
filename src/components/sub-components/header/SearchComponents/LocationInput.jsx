@@ -7,7 +7,10 @@ import {
   toggleShowSearchCities,
 } from "../../../../redux/user/userSlice";
 import SearchCities from "./SearchCities";
-import { filterCities, setSelectedCity } from "../../../../redux/listings/listingsSlice";
+import {
+  filterCities,
+  setSelectedCity,
+} from "../../../../redux/listings/listingsSlice";
 
 export default function () {
   const dispatch = useDispatch();
@@ -23,8 +26,7 @@ export default function () {
   };
 
   const deleteSearch = () => {
-    dispatch(setSelectedCity(""))
-    
+    dispatch(setSelectedCity(""));
   };
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export default function () {
         alt=""
         className="w-5 invert absolute right-4 bottom-4 p-[2px]"
         onClick={(e) => {
-          e.stopPropagation()
+          e.stopPropagation();
           deleteSearch();
         }}
       />

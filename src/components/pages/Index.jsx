@@ -13,7 +13,7 @@ export default function Index() {
 
   const [visibleListings, setVisibleListings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12; // Number of hotel cards to render per page
+  const itemsPerPage = 12; // Number of hotel cards to load per page
   const loadingRef = useRef(null);
 
   useEffect(() => {
@@ -34,17 +34,14 @@ export default function Index() {
       }
     };
 
-    // Attach event listener for scrolling
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [currentPage, listings, itemsPerPage]);
 
   useEffect(() => {
-    // Set the initial visible listings
     const startIndex = 0;
     const endIndex = startIndex + itemsPerPage;
     const initialListings = listings.slice(startIndex, endIndex);

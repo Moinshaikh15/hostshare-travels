@@ -5,11 +5,8 @@ export default function TopInfo() {
   let selectedListing = useSelector((state) => state.listings.selectedListing);
   return (
     <div className="w-full max-sm:w-[91vw] flex flex-col justify-center gap-[10px] max-sm:border-b-[1px] max-sm:pb-10">
-      <h1 className=" text-3xl font-medium">
-        {selectedListing?.info?.title}
-      </h1>
+      <h1 className=" text-3xl font-medium">{selectedListing?.info?.title}</h1>
       <div className="flex justify-between max-sm:px-2">
-        
         <div className="flex justify-start items-center gap-1 text-sm">
           <div className="flex justify-center items-center underline">
             <img src="/assets/icons/star.png" alt="" className="w-3 mr-1" />

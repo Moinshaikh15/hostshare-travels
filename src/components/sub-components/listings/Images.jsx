@@ -56,7 +56,6 @@ export default function Images() {
             </div>
           );
         }
-        return null; // Skip rendering for images on even indexes
       })}
     </div>
   );
