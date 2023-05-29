@@ -42,7 +42,6 @@ export default function MapContainer() {
         const el = document.createElement("div");
         el.className = "marker";
         el.innerHTML = `<span class="bg-white px-4 py-2 rounded-xl">$${marker.info.price}</span>`;
-        console.log(marker.info.location.long, marker.info.location.lat);
 
         new mapboxgl.Marker(el)
           .setLngLat({
