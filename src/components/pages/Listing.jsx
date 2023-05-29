@@ -7,9 +7,6 @@ import AllImages from "../sub-components/listings/AllImages";
 import ListingDescContainer from "../sub-components/listings/ListingDescContainer";
 import ImageSlider from "../sub-components/listings/Mobile/ImageSlider";
 import { useNavigate } from "react-router-dom";
-import Information from "../sub-components/listings/Information";
-import Reservation from "../sub-components/listings/Reservation";
-import ReservationMobile from "../sub-components/listings/Mobile/ReservationMobile";
 
 export default function Listing() {
   const showAllImages = useSelector((state) => state.user.showAllImages);
@@ -21,7 +18,10 @@ export default function Listing() {
   };
   useEffect(() => {
     dispatch(toggleCategories(true));
-  }, []);
+    window.scrollTo(0, 0);
+    if (showAllImages) document.body.style.overflowY = "hidden";
+    else document.body.style.overflowY = "auto";
+  }, [showAllImages]);
 
   return (
     <div className="flex flex-col gap-6 px-[13vw] py-24 max-sm:p-4 max-sm:pt-[340px] ">

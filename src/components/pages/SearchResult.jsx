@@ -12,6 +12,7 @@ export default function SearchResult() {
   useEffect(() => {
     dispatch(filterData());
     dispatch(toggleCategories(false));
+    window.scrollTo(0, 0);
   }, [filterData]);
 
   return (

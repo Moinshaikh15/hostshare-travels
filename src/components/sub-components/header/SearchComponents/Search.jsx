@@ -4,10 +4,15 @@ import SearchOpened from "./SearchOpened";
 import { useSelector } from "react-redux";
 import SearchBarMobile from "../Mobile/SearchBarMobile";
 import SearchOpenedMobile from "../Mobile/SearchOpenedMobile";
+import { el } from "date-fns/locale";
 
 export default function Search() {
   let isSearchOpened = useSelector((state) => state.user.isSearchOpened);
-  useEffect(() => {}, [isSearchOpened]);
+  useEffect(() => {
+    if (isSearchOpened) document.body.style.overflowY = "hidden";
+    else document.body.style.overflowY = "auto";
+  }, [isSearchOpened]);
+
   return (
     <div className="w-[40vw] flex justify-center items-center max-sm:w-[90vw]">
       {!isSearchOpened ? (

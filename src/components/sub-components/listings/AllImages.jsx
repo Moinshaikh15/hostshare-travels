@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setShowAllImages } from "../../../redux/user/userSlice";
 import Images from "./Images";
 
 export default function AllImages() {
   const dispatch = useDispatch();
+
+
   return (
     <div className="w-full absolute bottom-0 left-0 bg-white z-20 animate-[fadeFromBottom_1s_ease-in-out_forwards] ">
       <div className="h-[10vh] flex justify-between items-center px-6">

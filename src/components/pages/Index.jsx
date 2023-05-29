@@ -50,6 +50,7 @@ export default function Index() {
     const initialListings = listings.slice(startIndex, endIndex);
     setVisibleListings(initialListings);
     setCurrentPage(2);
+    window.scrollTo(0, 0);
   }, [listings, itemsPerPage]);
 
   return (
