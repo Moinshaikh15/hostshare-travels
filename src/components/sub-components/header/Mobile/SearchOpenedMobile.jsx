@@ -39,7 +39,11 @@ export default function SearchOpenedMobile() {
             dispatch(toggleSearch());
           }}
         >
-          <img src="/assets/icons/search.png" alt="search icon" className="w-[22px]" />
+          <img
+            src="/assets/icons/search.png"
+            alt="search icon"
+            className="w-[22px]"
+          />
           <p>Search</p>
         </div>
       </div>
