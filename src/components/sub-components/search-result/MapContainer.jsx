@@ -19,7 +19,7 @@ export default function MapContainer() {
         filteredData[0]?.info.location.long,
         filteredData[0]?.info.location.lat,
       ], // Set the initial center coordinates
-      zoom: 2, // Set the initial zoom level
+      zoom: 10, // Set the initial zoom level
     });
 
     // Add the geocoder control
@@ -29,6 +29,7 @@ export default function MapContainer() {
     });
     mapRef.current.addControl(geocoder);
 
+    // Clean up on unmount
     return () => {
       mapRef.current.remove();
     };
@@ -39,9 +40,9 @@ export default function MapContainer() {
     if (mapRef.current && filteredData && filteredData.length > 0) {
       filteredData.forEach((marker) => {
         const el = document.createElement("div");
-
         el.className = "marker";
         el.innerHTML = `<span class="bg-white px-4 py-2 rounded-xl">$${marker.info.price}</span>`;
+        console.log(marker.info.location.long, marker.info.location.lat);
 
         new mapboxgl.Marker(el)
           .setLngLat({
