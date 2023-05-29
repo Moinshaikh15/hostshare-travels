@@ -57,7 +57,7 @@ export default function () {
       <img
         src="/assets/icons/close.png"
         alt=""
-        className="w-5 bg-black invert absolute right-4 bottom-4 p-[2px]"
+        className="w-5 invert absolute right-4 bottom-4 p-[2px]"
         onClick={(e) => {
           e.stopPropagation()
           deleteSearch();

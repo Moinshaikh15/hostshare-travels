@@ -6,7 +6,7 @@ export default function Reservation() {
   let selectedListing = useSelector((state) => state.listings.selectedListing);
 
   return (
-    <div className="w-[380px] h-[480px] border-2 bg-white flex flex-col justify-start items-center gap-4 rounded-2xl shadow-xl p-6 max-sm:hidden">
+    <div className="w-[380px] h-[480px] border-2 bg-white flex flex-col justify-start items-center gap-4 rounded-2xl shadow-xl p-6 max-sm:hidden sticky top-[86px] right-0">
       <h1 className="w-full text-2xl ">
         {selectedListing.info.currency.symbol}
         {selectedListing.info.price}

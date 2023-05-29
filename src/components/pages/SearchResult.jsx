@@ -15,8 +15,8 @@ export default function SearchResult() {
   }, [filterData]);
 
   return (
-    <div className="pt-[90px] max-sm:pt-[170px] flex max-sm:flex-col justify-between items-start gap-6">
-      <div className="sm:w-[60%] max-sm:px-6 ">
+    <div className="pt-[90px] max-sm:pt-[170px] flex max-sm:flex-col justify-between items-start gap-6 px-[5.1vw] pb-6">
+      <div className="sm:w-[60%]">
         <h4>
           Over {filteredData?.length} results in {selectedCity}
         </h4>
@@ -27,7 +27,7 @@ export default function SearchResult() {
         </div>
       </div>
       <div
-        className={`w-[40%] max-sm:w-full h-[calc(100vh-160px)] max-sm:h-[40vh]  sm:fixed right-0 top-[160px]  flex-grow bg-yellow-900 bg-opacity-10 overflow-hidden`}
+        className={`w-[40%] max-sm:w-full h-[calc(100vh-160px)] max-sm:h-[300px]  sm:fixed right-0 top-[160px]  flex-grow bg-yellow-900 bg-opacity-10 overflow-hidden`}
       >
         <MapContainer />
       </div>

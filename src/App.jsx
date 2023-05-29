@@ -37,13 +37,13 @@ function App() {
     >
       <Header />
 
-      <div className="w-full flex-1 flex justify-center items-start px-[5.1vw] mt-[84px] max-sm:mt-0  max-sm:px-0 overflow-y-auto">
+      {/* <div className="w-full flex-1 flex justify-center items-start px-[5.1vw] mt-[84px] max-sm:mt-0  max-sm:px-0 overflow-y-auto"> */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/s/:city" element={<SearchResult />} />
           <Route path="/rooms/:id" element={<Listing />} />
         </Routes>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

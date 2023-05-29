@@ -8,9 +8,9 @@ export default function SearchOpened() {
   return (
     <div className="flex justify-center items-center gap-6 max-sm:hidden">
       <div className="flex justify-center items-center gap-6 animate-[popOut_0.2s_ease-in-out_forwards]">
-        <div className="border-b-2 border-gray-500 h-12 flex justify-center items-center cursor-pointer">
+        <button tabIndex={0} className="border-b-2 border-gray-500 h-12 flex justify-center items-center cursor-pointer">
           Stays
-        </div>
+        </button>
         <div className="cursor-pointer">Experiences</div>
         <div className="cursor-pointer">Online Experiences</div>
       </div>

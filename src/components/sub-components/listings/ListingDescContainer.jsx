@@ -6,11 +6,10 @@ import ReservationMobile from "./ReservationMobile";
 
 export default function ListingDescContainer() {
   return (
-    <div className="w-full max-sm:w-[91vw] flex justify-between items-start  mt-4 gap-[100px] pb-20">
+    <div className="w-full max-sm:w-[91vw] flex justify-between items-start  mt-4 gap-[100px] pb-20 relative">
       <Information />
-      <div className="sticky top-0">
-        <Reservation />
-      </div>
+
+      <Reservation />
 
       <ReservationMobile />
     </div>

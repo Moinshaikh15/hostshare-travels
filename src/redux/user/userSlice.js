@@ -8,6 +8,7 @@ const initialState = {
   showSearchCities: true,
   showDateRange: false,
   showGuests: false,
+  showSelectedCity:false,
 };
 
 const userSlice = createSlice({
@@ -35,6 +36,9 @@ const userSlice = createSlice({
     toggleShowGuests: (state) => {
       state.showGuests = !state.showGuests;
     },
+    setShowSelectedCity:(state,action)=>{
+      state.showSelectedCity=action.payload
+    }
   },
 });
 
@@ -43,6 +47,7 @@ export const {
   toggleCategories,
   setShowAllImages,
   setSelectedInput,
+  setShowSelectedCity,
   toggleShowSearchCities,
   toggleShowDateRange,
   toggleShowGuests,

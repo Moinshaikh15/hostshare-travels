@@ -7,6 +7,9 @@ import AllImages from "../sub-components/listings/AllImages";
 import ListingDescContainer from "../sub-components/listings/ListingDescContainer";
 import ImageSlider from "../sub-components/listings/ImageSlider";
 import { useNavigate } from "react-router-dom";
+import Information from "../sub-components/listings/Information";
+import Reservation from "../sub-components/listings/Reservation";
+import ReservationMobile from "../sub-components/listings/ReservationMobile";
 
 export default function Listing() {
   const showAllImages = useSelector((state) => state.user.showAllImages);
@@ -21,7 +24,7 @@ export default function Listing() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col gap-6 px-[8vw] py-4 max-sm:p-4 max-sm:pt-[340px] ">
+    <div className="flex flex-col gap-6 px-[13vw] py-24 max-sm:p-4 max-sm:pt-[340px] ">
       <TopInfo />
 
       {/* top container for mobile */}

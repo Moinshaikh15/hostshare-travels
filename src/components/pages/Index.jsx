@@ -53,7 +53,7 @@ export default function Index() {
   }, [listings, itemsPerPage]);
 
   return (
-    <div className="flex flex-wrap justify-between pt-10 gap-6 mt-[84px] max-sm:px-6 max-sm:mt-[140px] ">
+    <div className="flex flex-wrap justify-between pt-10 gap-6  max-sm:mt-[140px] px-[5.1vw] max-sm:px-4 mt-[164px]">
       {visibleListings.map((item, indx) => (
         <HotelCard key={item.info.id + indx} item={item} />
       ))}
