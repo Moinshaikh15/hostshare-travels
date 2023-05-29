@@ -5,11 +5,11 @@ import ImageContainer from "../sub-components/listings/ImageContainer";
 import { toggleCategories } from "../../redux/user/userSlice";
 import AllImages from "../sub-components/listings/AllImages";
 import ListingDescContainer from "../sub-components/listings/ListingDescContainer";
-import ImageSlider from "../sub-components/listings/ImageSlider";
+import ImageSlider from "../sub-components/listings/Mobile/ImageSlider";
 import { useNavigate } from "react-router-dom";
 import Information from "../sub-components/listings/Information";
 import Reservation from "../sub-components/listings/Reservation";
-import ReservationMobile from "../sub-components/listings/ReservationMobile";
+import ReservationMobile from "../sub-components/listings/Mobile/ReservationMobile";
 
 export default function Listing() {
   const showAllImages = useSelector((state) => state.user.showAllImages);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setShowAllImages } from "../../../redux/user/userSlice";
+import { setShowAllImages } from "../../../../redux/user/userSlice";
 
 const ImageSlider = () => {
   let selectedListing = useSelector((state) => state.listings.selectedListing);

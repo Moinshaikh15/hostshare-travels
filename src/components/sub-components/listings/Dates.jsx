@@ -2,7 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function Dates() {
-  let selectedDates = useSelector((state) => state.listings.selectedDates);
+  let { selectedDates, selectedGuests } = useSelector(
+    (state) => state.listings
+  );
+
   return (
     <div className="w-full flex flex-col gap-2 border-[1px] border-gray-400 rounded-lg text-xs">
       <div className="w-full h-14 flex justify-between items-center border-b-[1px]   border-gray-400">
@@ -24,7 +27,7 @@ export default function Dates() {
       <div className="flex justify-between items-center p-2">
         <div>
           <p>GUESTS</p>
-          <p className="text-sm">1 guest</p>
+          <p className="text-sm">{selectedGuests} guest</p>
         </div>
         <img
           src="/assets/icons/left.png"

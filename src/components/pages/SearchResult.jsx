@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCategories, toggleSearch } from "../../redux/user/userSlice";
+import { toggleCategories } from "../../redux/user/userSlice";
 import HotelCard from "../sub-components/common/HotelCard";
 import { filterData } from "../../redux/listings/listingsSlice";
 import MapContainer from "../sub-components/search-result/MapContainer";
@@ -15,7 +15,7 @@ export default function SearchResult() {
   }, [filterData]);
 
   return (
-    <div className="pt-[90px] max-sm:pt-[170px] flex max-sm:flex-col justify-between items-start gap-6 px-[5.1vw] pb-6">
+    <div className="pt-[170px] flex max-sm:flex-col justify-between items-start gap-6 px-[5.1vw] pb-6">
       <div className="sm:w-[60%]">
         <h4>
           Over {filteredData?.length} results in {selectedCity}
@@ -27,7 +27,7 @@ export default function SearchResult() {
         </div>
       </div>
       <div
-        className={`w-[40%] max-sm:w-full h-[calc(100vh-160px)] max-sm:h-[300px]  sm:fixed right-0 top-[160px]  flex-grow bg-yellow-900 bg-opacity-10 overflow-hidden`}
+        className={`w-[39.5%] max-sm:w-full h-[calc(100vh-160px)] max-sm:h-[300px]  sm:fixed right-0 top-[160px]  flex-grow bg-yellow-900 bg-opacity-10 overflow-hidden`}
       >
         <MapContainer />
       </div>

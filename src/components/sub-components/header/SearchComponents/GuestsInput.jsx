@@ -11,7 +11,10 @@ import {
 } from "../../../../redux/user/userSlice";
 import GuestsCard from "./GuestsCard";
 import { useNavigate } from "react-router-dom";
-import { filterData } from "../../../../redux/listings/listingsSlice";
+import {
+  filterData,
+  setSelectedGuests,
+} from "../../../../redux/listings/listingsSlice";
 
 export default function GuestsInput() {
   let goto = useNavigate();
@@ -21,6 +24,10 @@ export default function GuestsInput() {
   );
   let { selectedCity } = useSelector((state) => state.listings);
   let dispatch = useDispatch();
+
+  const handleInputChange = (event) => {
+    dispatch(setSelectedGuests(event.target.value));
+  };
   return (
     <div
       className={`w-[20rem] h-full px-6 py-4 pr-2 rounded-[40px] flex justify-between items-center relative ${
@@ -43,10 +50,12 @@ export default function GuestsInput() {
           id=""
           placeholder="Search destinations"
           className="outline-none bg-transparent"
+          min="1"
+          onChange={handleInputChange}
         />
       </div>
 
-      <div
+      <button
         className={`h-[50px] bg-[#329a9a] text-white p-1 flex justify-center items-center gap-4 ${
           selectedInput === "AddGuest"
             ? "w-[120px] rounded-[40px]"
@@ -62,7 +71,7 @@ export default function GuestsInput() {
       >
         <img src="/assets/icons/search.png" alt="" className="w-[22px]" />
         {selectedInput === "AddGuest" ? <p>Search</p> : ""}
-      </div>
+      </button>
 
       {showGuests ? <GuestsCard /> : ""}
     </div>

@@ -50,13 +50,13 @@ export default function ImageContainer() {
               onClick={() => dispatch(setShowAllImages())}
             />
           ))}
-          <div
+          <button
             className="absolute bottom-6 right-6 bg-white flex justify-center items-center gap-2 px-4 py-1 border-[1px] border-black rounded-lg cursor-pointer"
             onClick={() => dispatch(setShowAllImages())}
           >
             <img src="/assets/icons/dots.png" alt="" className="w-3" />
             <p>Show all photos</p>
-          </div>
+          </button>
         </div>
       </div>
     </div>

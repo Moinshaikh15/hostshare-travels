@@ -15,7 +15,7 @@ export default function UserInfo() {
         />
       </div>
 
-      <div className="w-[80px] h-full flex justify-center items-center gap-[10px] border-[1px] border-gray-400 rounded-[30px] hover:shadow-3xl transition-shadow  duration-200 ease-in cursor-pointer">
+      <div className="w-[80px] h-full flex justify-center items-center gap-[14px] border-[1px] border-gray-400 rounded-[30px] hover:shadow-3xl transition-shadow  duration-200 ease-in cursor-pointer">
         <img
           src="/assets/icons/menu.png"
           alt="menu"

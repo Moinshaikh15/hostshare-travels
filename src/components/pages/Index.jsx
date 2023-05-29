@@ -13,7 +13,7 @@ export default function Index() {
 
   const [visibleListings, setVisibleListings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of hotel cards to render per page
+  const itemsPerPage = 12; // Number of hotel cards to render per page
   const loadingRef = useRef(null);
 
   useEffect(() => {

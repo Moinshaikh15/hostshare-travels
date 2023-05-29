@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Information from "./Information";
 import Reservation from "./Reservation";
-import ReservationMobile from "./ReservationMobile";
+import ReservationMobile from "./Mobile/ReservationMobile";
 
 export default function ListingDescContainer() {
   return (

@@ -7,6 +7,7 @@ const initialState = {
   cities: [], // Initial cities array
   filteredCities: [], // Initial filtered cities array
   selectedCity: localStorage.getItem('selectedCity') || "",
+  selectedGuests: 0,
   selectedDates: {
     checkIn: "",
     checkOut: "",
@@ -67,6 +68,9 @@ const listingsSlice = createSlice({
       state.selectedListing = action.payload;
       localStorage.setItem('selectedListing', JSON.stringify(action.payload));
     },
+    setSelectedGuests: (state, action) => {
+      state.selectedGuests = action.payload
+    }
   },
 });
 
@@ -77,6 +81,7 @@ export const {
   setSelectedCity,
   setSelectedDates,
   setSelectedListing,
+  setSelectedGuests
 } = listingsSlice.actions;
 
 export default listingsSlice.reducer;

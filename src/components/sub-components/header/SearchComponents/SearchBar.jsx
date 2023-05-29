@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setShowSelectedCity,
@@ -7,14 +7,14 @@ import {
 
 export default function SearchBar() {
   const selectedCity = useSelector((state) => state.listings.selectedCity);
-  const showSelectedCity = useSelector((state) => state.listings.selectedCity);
+  const showSelectedCity = useSelector((state) => state.user.showSelectedCity);
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (window.location.href.includes("/s/"))
       dispatch(setShowSelectedCity(true));
     else dispatch(setShowSelectedCity(false));
-  }, [showSelectedCity]);
+  }, [window.location.href]);
   return (
     <div
       className=" h-[48px] flex justify-center items-center gap-4 border-[1px] border-gray-300 rounded-[40px] shadow-3xl text-sm transition-shadow  duration-200 ease-in hover:shadow-md cursor-pointer animate-[popIn_0.2s_ease-in-out_forwards] max-sm:hidden"
