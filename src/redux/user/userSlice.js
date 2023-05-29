@@ -5,6 +5,9 @@ const initialState = {
   hideCategories: false,
   showAllImages: false,
   selectedInput: "location",
+  showSearchCities: true,
+  showDateRange: false,
+  showGuests: false,
 };
 
 const userSlice = createSlice({
@@ -23,6 +26,15 @@ const userSlice = createSlice({
     setSelectedInput: (state, action) => {
       state.selectedInput = action.payload;
     },
+    toggleShowSearchCities: (state) => {
+      state.showSearchCities = !state.showSearchCities;
+    },
+    toggleShowDateRange: (state) => {
+      state.showDateRange = !state.showDateRange;
+    },
+    toggleShowGuests: (state) => {
+      state.showGuests = !state.showGuests;
+    },
   },
 });
 
@@ -31,6 +43,10 @@ export const {
   toggleCategories,
   setShowAllImages,
   setSelectedInput,
+  toggleShowSearchCities,
+  toggleShowDateRange,
+  toggleShowGuests,
+
 } = userSlice.actions;
 
 export default userSlice.reducer;

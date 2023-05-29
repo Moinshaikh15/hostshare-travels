@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  filterCities,
   toggleShowDateRange,
   toggleShowGuests,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
+} from "../../../../redux/user/userSlice";
 import SearchCities from "../SearchComponents/SearchCities";
 import { setSelectedInput } from "../../../../redux/user/userSlice";
+import { filterCities } from "../../../../redux/listings/listingsSlice";
 
 export default function LocationInputMobile() {
   let selectedInput = useSelector((state) => state.user.selectedInput);
   const [userInput, setUserInput] = useState("");
-  let { selectedCity, showSearchCities, showDateRange, showGuests } =
-    useSelector((state) => state.listings);
+  let { showSearchCities, showDateRange, showGuests } = useSelector(
+    (state) => state.user
+  );
+  let { selectedCity } = useSelector((state) => state.listings);
   let dispatch = useDispatch();
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -35,7 +37,7 @@ export default function LocationInputMobile() {
           <div
             className="w-[90vw]"
             onClick={(e) => {
-              e.stopPropagation()
+              e.stopPropagation();
               dispatch(setSelectedInput("location"));
               if (!showSearchCities) dispatch(toggleShowSearchCities());
               if (showDateRange) dispatch(toggleShowDateRange());

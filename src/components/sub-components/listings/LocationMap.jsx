@@ -32,7 +32,7 @@ export default function LocationMap() {
   }, []);
 
   return (
-    <div className="w-[20vw] max-sm:w-[91vw] h-[40vh] overflow-hidden">
+    <div className="w-full max-sm:w-[91vw] h-[40vh] overflow-hidden">
       <div ref={mapContainerRef} className="w-full h-full" />;
     </div>
   );

@@ -5,7 +5,7 @@ import {
   toggleShowDateRange,
   toggleShowGuests,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
+} from "../../../../redux/user/userSlice";
 import GuestsCard from "../SearchComponents/GuestsCard";
 
 export default function GuestsInputMobile() {

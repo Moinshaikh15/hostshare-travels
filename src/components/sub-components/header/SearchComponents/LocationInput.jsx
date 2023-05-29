@@ -1,23 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedInput } from "../../../../redux/user/userSlice";
 import {
   toggleShowDateRange,
   toggleShowGuests,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
+} from "../../../../redux/user/userSlice";
 import SearchCities from "./SearchCities";
+import { filterCities, setSelectedCity } from "../../../../redux/listings/listingsSlice";
 
 export default function () {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const selectedInput = useSelector((state) => state.user.selectedInput);
+  const { showSearchCities, showDateRange, showGuests } = useSelector(
+    (state) => state.user
+  );
+  const { selectedCity } = useSelector((state) => state.listings);
   const [userInput, setUserInput] = useState("");
-  let selectedInput = useSelector((state) => state.user.selectedInput);
-  let { selectedCity, showSearchCities, showDateRange, showGuests } =
-    useSelector((state) => state.listings);
-
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
     dispatch(filterCities(event.target.value));
+  };
+
+  const deleteSearch = () => {
+    dispatch(setSelectedCity(""))
+    
   };
 
   useEffect(() => {
@@ -40,12 +47,21 @@ export default function () {
       <p className="text-xs font-bold">Where</p>
       <input
         type="text"
-        name=""
-        id=""
+        name="locationInput"
+        id="locationInput"
         placeholder="Search destinations"
         className="outline-none bg-transparent"
         value={userInput}
         onChange={handleInputChange}
+      />
+      <img
+        src="/assets/icons/close.png"
+        alt=""
+        className="w-5 bg-black invert absolute right-4 bottom-4 p-[2px]"
+        onClick={(e) => {
+          e.stopPropagation()
+          deleteSearch();
+        }}
       />
       {showSearchCities ? <SearchCities /> : ""}
     </div>

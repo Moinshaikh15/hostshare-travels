@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function BottomBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
+  const isSearchOpened = useSelector((state) => state.user.isSearchOpened);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,16 +14,19 @@ export default function BottomBar() {
       setPrevScrollPos(currentScrollPos);
       setVisible(isVisible);
     };
-
+    
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    
   }, [prevScrollPos]);
   return (
     <div
       className={`w-full h-16 fixed bottom-0 left-0 bg-white z-20 flex justify-center items-center gap-6 sm:hidden ${
         visible ? "" : "hidden"
+      } ${
+        isSearchOpened ? "hidden" : ""
       } animate-[bottomUp_0.2s_ease-in-out_forwards]`}
     >
       <div className="flex flex-col justify-center items-center">

@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { setSelectedCity } from "../../../../redux/listings/listingsSlice";
 import {
-  setSelectedCity,
+  setSelectedInput,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
-import { setSelectedInput } from "../../../../redux/user/userSlice";
+} from "../../../../redux/user/userSlice";
 
 export default function CityCard({ city }) {
   const dispatch = useDispatch();
-  
+
   return (
     <div
       className="flex justify-start items-center gap-4 px-4 py-[10px] max-sm:py-[5px] hover:bg-slate-100"

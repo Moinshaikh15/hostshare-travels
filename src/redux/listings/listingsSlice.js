@@ -6,10 +6,7 @@ const initialState = {
   filteredData: [], // Initial filtered data array
   cities: [], // Initial cities array
   filteredCities: [], // Initial filtered cities array
-  selectedCity: "",
-  showSearchCities: true,
-  showDateRange: false,
-  showGuests: false,
+  selectedCity: localStorage.getItem('selectedCity') || "",
   selectedDates: {
     checkIn: "",
     checkOut: "",
@@ -17,8 +14,8 @@ const initialState = {
   loading: false,
   error: null,
   filteredData: [],
-  selectedListing: "",
- 
+  selectedListing: JSON.parse(localStorage.getItem('selectedListing')) || "",
+
 };
 
 const listingsSlice = createSlice({
@@ -52,29 +49,23 @@ const listingsSlice = createSlice({
         .filter((city) => city.toLowerCase().includes(userInput))
         .slice(0, 5);
     },
-    filterData: (state, action) => {
+    filterData: (state) => {
       state.filteredData = state.data.filter(
         (item) => item.info.location.city === state.selectedCity.split(",")[0]
       );
     },
     setSelectedCity: (state, action) => {
       state.selectedCity = action.payload;
+      localStorage.setItem('selectedCity', action.payload);
     },
-    toggleShowSearchCities: (state, action) => {
-      state.showSearchCities = !state.showSearchCities;
-    },
-    toggleShowDateRange: (state, action) => {
-      state.showDateRange = !state.showDateRange;
-    },
-    toggleShowGuests: (state, action) => {
-      state.showGuests = !state.showGuests;
-    },
+
     setSelectedDates: (state, action) => {
       state.selectedDates.checkIn = action.payload.checkIn;
       state.selectedDates.checkOut = action.payload.checkOut;
     },
     setSelectedListing: (state, action) => {
       state.selectedListing = action.payload;
+      localStorage.setItem('selectedListing', JSON.stringify(action.payload));
     },
   },
 });
@@ -84,9 +75,6 @@ export const {
   filterCities,
   filterData,
   setSelectedCity,
-  toggleShowSearchCities,
-  toggleShowDateRange,
-  toggleShowGuests,
   setSelectedDates,
   setSelectedListing,
 } = listingsSlice.actions;

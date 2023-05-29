@@ -27,7 +27,7 @@ export default function Images() {
           return (
             <div key={index} className="w-full">
               <img
-                src={image.url}
+                src={image?.url}
                 alt={`Image ${index + 1}`}
                 className="w-full h-[30rem] max-sm:h-[14rem] object-cover"
               />
@@ -41,14 +41,14 @@ export default function Images() {
             >
               <div className="flex-1">
                 <img
-                  src={image[0].url}
+                  src={image[0]?.url}
                   alt={`Image ${index + 1}`}
                   className="w-full"
                 />
               </div>
               <div className="flex-1">
                 <img
-                  src={image[1].url}
+                  src={image[1]?.url}
                   alt={`Image ${index + 2}`}
                   className="w-full"
                 />

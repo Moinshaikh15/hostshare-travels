@@ -5,13 +5,15 @@ import {
   toggleShowDateRange,
   toggleShowGuests,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
+} from "../../../../redux/user/userSlice";
 import DateRange from "./DateRange";
 export default function DatesInputCheckIn() {
   const dispatch = useDispatch();
   let selectedInput = useSelector((state) => state.user.selectedInput);
-  let { showSearchCities, showDateRange, showGuests, selectedDates } =
-    useSelector((state) => state.listings);
+  let { showSearchCities, showDateRange, showGuests } = useSelector(
+    (state) => state.user
+  );
+  let { selectedDates } = useSelector((state) => state.listings);
   useEffect(() => {}, [selectedInput]);
 
   return (

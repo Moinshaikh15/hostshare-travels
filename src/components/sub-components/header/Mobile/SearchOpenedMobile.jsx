@@ -27,7 +27,7 @@ export default function SearchOpenedMobile() {
         <GuestsInputMobile />
       </div>
 
-      <div className="w-[90vw] absolute bottom-0 flex justify-between items-center py-2">
+      <div className="w-[90vw] absolute bottom-0 flex justify-between items-center py-2 z-30">
         <p className="underline">Clear all</p>
         <div
           className={`w-[120px] h-[50px] bg-[#329a9a] text-white p-1 flex justify-center items-center gap-4 rounded-lg `}

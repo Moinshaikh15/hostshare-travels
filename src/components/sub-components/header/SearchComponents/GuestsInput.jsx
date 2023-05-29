@@ -1,20 +1,25 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedInput, toggleSearch } from "../../../../redux/user/userSlice";
 import {
-  filterData,
+  setSelectedInput,
+  toggleSearch,
+} from "../../../../redux/user/userSlice";
+import {
   toggleShowDateRange,
   toggleShowGuests,
   toggleShowSearchCities,
-} from "../../../../redux/listings/listingsSlice";
+} from "../../../../redux/user/userSlice";
 import GuestsCard from "./GuestsCard";
 import { useNavigate } from "react-router-dom";
+import { filterData } from "../../../../redux/listings/listingsSlice";
 
 export default function GuestsInput() {
   let goto = useNavigate();
   let selectedInput = useSelector((state) => state.user.selectedInput);
-  let { selectedCity, showSearchCities, showDateRange, showGuests } =
-    useSelector((state) => state.listings);
+  let { showSearchCities, showDateRange, showGuests } = useSelector(
+    (state) => state.user
+  );
+  let { selectedCity } = useSelector((state) => state.listings);
   let dispatch = useDispatch();
   return (
     <div
