@@ -31,7 +31,7 @@ export default function Dates() {
         </div>
         <img
           src="/assets/icons/left.png"
-          alt=""
+          alt="left"
           className=" w-3 h-4 rotate-[-90deg]"
         />
       </div>

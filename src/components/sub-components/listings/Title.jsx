@@ -30,7 +30,7 @@ export default function Title() {
       </div>
       <img
         src={selectedListing?.info?.host?.avatar.url}
-        alt=""
+        alt="host avatar"
         className="w-16 rounded-full"
       />
     </div>

@@ -45,7 +45,7 @@ export default function SearchBarMobile() {
       </div>
       <img
         src="/assets/icons/filter.png"
-        alt=""
+        alt="filter icon"
         className="w-8 h-8 border-2 p-1 rounded-full"
       />
     </div>

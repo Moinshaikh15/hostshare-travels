@@ -11,17 +11,17 @@ export default function AllImages() {
       <div className="h-[10vh] flex justify-between items-center px-6">
         <img
           src="/assets/icons/left.png"
-          alt=""
+          alt="left icon"
           className=" w-4 h-5 cursor-pointer"
           onClick={() => dispatch(setShowAllImages())}
         />
         <div className="flex justify-end items-center gap-[18px] cursor-pointer">
           <div className="flex justify-center items-center gap-[6px]">
-            <img src="/assets/icons/upload.png" alt="" className="w-[20px]" />
+            <img src="/assets/icons/upload.png" alt="upload icon" className="w-[20px]" />
             <p className="underline"> Share</p>
           </div>
           <div className="flex justify-end items-center gap-[6px] cursor-pointer">
-            <img src="/assets/icons/heart2.png" alt="" className="w-4" />
+            <img src="/assets/icons/heart2.png" alt="hear icon" className="w-4" />
             <p className="underline">Save</p>
           </div>
         </div>

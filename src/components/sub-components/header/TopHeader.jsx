@@ -14,7 +14,7 @@ export default function TopHeader() {
       <div className="w-[20vw] max-sm:hidden">
         <img
           src="/assets/logo/Hostshare-green.png"
-          alt=""
+          alt="hostshare logo"
           className="w-[140px]"
         />
       </div>

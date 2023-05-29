@@ -28,7 +28,7 @@ export default function SearchBar() {
       <div className="h-[20px] w-[1px] bg-gray-300"></div> {/* vertical line */}
       <p className="text-gray-400">Add Guests</p>
       <div className="w-[30px] h-[30px] bg-[#329a9a] rounded-[50%] p-1 flex justify-center items-center mr-2">
-        <img src="/assets/icons/search.png" alt="" className="w-[18px]" />
+        <img src="/assets/icons/search.png" alt="search icon" className="w-[18px]" />
       </div>
     </div>
   );

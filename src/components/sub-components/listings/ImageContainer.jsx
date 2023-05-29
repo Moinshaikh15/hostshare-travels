@@ -16,18 +16,18 @@ export default function ImageContainer() {
     <div className="w-full flex justify-start items-center gap-2 max-sm:hidden">
       <img
         src={selectedListing.info.mainImage.url}
-        alt=""
+        alt="listing image"
         className="flex-1 h-[370px] object-cover rounded-l-xl cursor-pointer"
         onClick={() => dispatch(setShowAllImages())}
       />
 
       <div className="flex-1 flex gap-2">
         <div className="flex-1 flex flex-col gap-2 ">
-          {imageArr.map((image) => (
+          {imageArr.map((image,indx) => (
             <img
               key={image.url}
               src={image.url}
-              alt=""
+              alt={`listing image ${indx}`}
               className=" h-[181px] object-cover object-center cursor-pointer"
               style={{
                 imageRendering: "crisp-edges",
@@ -42,8 +42,8 @@ export default function ImageContainer() {
             <img
               key={image.url}
               src={image.url}
-              alt=""
-              className={`w-full h-[181px] object-cover cursor-pointer ${
+              alt={`listing image ${indx}`}            
+                className={`w-full h-[181px] object-cover cursor-pointer ${
                 indx === 0 ? "rounded-tr-xl" : "rounded-br-xl"
               }`}
               onClick={() => dispatch(setShowAllImages())}
@@ -53,7 +53,7 @@ export default function ImageContainer() {
             className="absolute bottom-6 right-6 bg-white flex justify-center items-center gap-2 px-4 py-1 border-[1px] border-black rounded-lg cursor-pointer"
             onClick={() => dispatch(setShowAllImages())}
           >
-            <img src="/assets/icons/dots.png" alt="" className="w-3" />
+            <img src="/assets/icons/dots.png" alt="dots icon" className="w-3" />
             <p>Show all photos</p>
           </button>
         </div>

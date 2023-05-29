@@ -21,7 +21,7 @@ export default function CityCard({ city }) {
       <div className="w-12 max-sm:w-10 h-12 max-sm:h-10 bg-[#ebebeb] flex justify-center items-center rounded-xl">
         <img
           src="/assets/icons/location.png"
-          alt=""
+          alt="location icon"
           className="w-6 max-sm:w-4 h-6 max-sm:h-4"
         />
       </div>

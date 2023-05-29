@@ -9,7 +9,7 @@ export default function TopInfo() {
       <div className="flex justify-between max-sm:px-2">
         <div className="flex justify-start items-center gap-1 text-sm">
           <div className="flex justify-center items-center underline">
-            <img src="/assets/icons/star.png" alt="" className="w-3 mr-1" />
+            <img src="/assets/icons/star.png" alt="start" className="w-3 mr-1" />
             <p>{selectedListing?.info?.ratings.value}</p>
           </div>
           <div className="w-[3px] h-[3px] bg-black rounded-2xl"></div>
@@ -27,7 +27,7 @@ export default function TopInfo() {
             <p className="underline "> Share</p>
           </div>
           <div className="flex justify-end items-center gap-[6px]">
-            <img src="/assets/icons/heart2.png" alt="" className="w-4" />
+            <img src="/assets/icons/heart2.png" alt="heart" className="w-4" />
             <p className="underline max-sm:hidden">Save</p>
           </div>
         </div>

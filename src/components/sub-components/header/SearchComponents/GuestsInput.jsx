@@ -69,7 +69,7 @@ export default function GuestsInput() {
           dispatch(toggleSearch());
         }}
       >
-        <img src="/assets/icons/search.png" alt="" className="w-[22px]" />
+        <img src="/assets/icons/search.png" alt="search icon" className="w-[22px]" />
         {selectedInput === "AddGuest" ? <p>Search</p> : ""}
       </button>
 
